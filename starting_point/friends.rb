@@ -34,3 +34,30 @@ def total_money(people)
   end
   return total
 end
+
+
+def loan_of_money(lender, lendee, amount)
+  new_lendee = lendee[:monies] + amount
+  new_lender = lender[:monies] - amount
+  return [new_lendee, new_lender]
+end
+
+
+def combined_food(people)
+  combined_food_array = []
+  for person in people
+    person[:favourites][:snacks].each { |a| combined_food_array << a }
+  end
+  return combined_food_array
+end
+
+
+def no_friends(people)
+  no_friends = []
+  for person in people
+    if person[:friends].empty?
+      no_friends << person[:name]
+    end
+  end
+  return no_friends
+end
